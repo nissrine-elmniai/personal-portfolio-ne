@@ -13,10 +13,7 @@ export const Navbar = () => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
   const scrollToContact = () => {
-    // Fermer le menu mobile si ouvert
     setIsMobileMenuOpen(false);
-
-    // Scroller vers la section contact
     const contactSection = document.getElementById('contact');
     if (contactSection) {
       contactSection.scrollIntoView({
@@ -72,7 +69,7 @@ export const Navbar = () => {
                   {link.label}
                 </a>
               ))}
-              <Button onClick={() => setIsMobileMenuOpen(false)}>Contact Me</Button>
+              <Button onClick={() => { setIsMobileMenuOpen(false); scrollToContact(); }}>Contact Me</Button>
             </div>
           </div>)
       }

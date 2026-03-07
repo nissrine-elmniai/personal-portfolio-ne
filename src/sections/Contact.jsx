@@ -103,7 +103,7 @@ export const Contact = () => {
               <label htmlFor="name"
                 className="block text-sm font-medium mb-2">Name</label>
               <input id="name"
-                type="name"
+                type="text"
                 required
                 placeholder="Your name..."
                 value={formData.name}
@@ -126,7 +126,6 @@ export const Contact = () => {
                 className="block text-sm font-medium mb-2">Message</label>
               <textarea id="message"
                 rows={5}
-                type="text"
                 required
                 placeholder="Your message..."
                 value={formData.message}

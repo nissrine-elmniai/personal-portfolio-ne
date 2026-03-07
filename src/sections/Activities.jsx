@@ -15,10 +15,17 @@ const activities = [
         current: false,
     },
     {
+        period: "October 2024 - May 2025",
+        role: "Member",
+        company: "GI Club at ENSAO",
+        skills: ["Public Speaking", "Time Management", "Event Organization", "Communication"],
+        current: false,
+    },
+    {
         period: "October 2023 - Juin 2024",
         role: "Member",
         company: "Altruism Club at ENSAO",
-        skills: ["Team Work ", "Discipline", "Event Organization", "Design"],
+        skills: ["Team Work ", "Discipline", "Event Organization", "Design", "Public Speaking"],
         current: false,
     },
 ];
