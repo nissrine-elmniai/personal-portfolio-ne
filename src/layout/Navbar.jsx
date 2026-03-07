@@ -6,11 +6,25 @@ const navLinks = [
   { href: '#projects', label: "Projects" },
   { href: '#experience', label: "Experience" },
   { href: '#certifications', label: "Certifications" },
+  { href: '#activities', label: "Activities" },
 
 ];
 export const Navbar = () => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
+  const scrollToContact = () => {
+    // Fermer le menu mobile si ouvert
+    setIsMobileMenuOpen(false);
+
+    // Scroller vers la section contact
+    const contactSection = document.getElementById('contact');
+    if (contactSection) {
+      contactSection.scrollIntoView({
+        behavior: 'smooth',
+        block: 'start'
+      });
+    }
+  };
   useEffect(() => {
     const handleScroll = () => {
       setIsScrolled(window.scrollY > 50);
@@ -34,7 +48,7 @@ export const Navbar = () => {
           </div>
         </div>
         { /*CTA Button */}
-        <div className="hidden md:block"><Button size="sm">Contact Me</Button></div>
+        <div className="hidden md:block"><Button size="sm" onClick={scrollToContact}>Contact Me</Button></div>
 
         { /* Mobile Menu Button*/}
         <button className="md:hidden p-2 text-foreground cursor-pointer"

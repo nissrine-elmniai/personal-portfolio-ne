@@ -6,6 +6,7 @@ import { Contact } from '@/sections/Contact'
 import { Navbar } from '@/layout/Navbar'
 import { Footer } from '@/layout/Footer'
 import { Certification } from './sections/Certification'
+import { Activities } from './sections/Activities'
 
 function App() {
   return (
@@ -17,6 +18,7 @@ function App() {
         <Projects />
         <Experience />
         <Certification />
+        <Activities />
         <Contact />
       </main>
       <Footer />

@@ -91,7 +91,7 @@ export const Contact = () => {
         </h2>
         <p className="text-muted-foreground animate-fade-in animation-delay-200">
           Have a project in mind? I'd love to hear about it. Send me a message
-          and let'sdiscuss how we can work together.
+          and let's discuss how we can work together.
         </p>
       </div>
 

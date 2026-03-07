@@ -31,6 +31,24 @@ const skills = [
 ];
 
 export const Hero = () => {
+  const scrollToContact = () => {
+    // Scroller vers la section contact
+    const contactSection = document.getElementById('contact');
+    if (contactSection) {
+      contactSection.scrollIntoView({
+        behavior: 'smooth',
+        block: 'start'
+      });
+    }
+  };
+  const downloadCV = () => {
+    const link = document.createElement('a');
+    link.href = '/cv.pdf';
+    link.download = 'Nissrine_EL_MNIAI_CV.pdf';
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
+  };
   return (<section className="relative min-h-screen flex items-center overflow-hidden">
     {/*Bg*/}
     <div className="absolute inset-0">
@@ -84,10 +102,10 @@ export const Hero = () => {
           </div>
           { /*CTAs  */}
           <div className="flex flex-wrap gap-4 animate-fade-in animation-delay-300">
-            <Button size="lg">
+            <Button size="lg" onClick={scrollToContact}>
               Contact Me <ArrowRight className="w-5 h-5" />
             </Button>
-            <AnimatedBorderButton>
+            <AnimatedBorderButton onClick={downloadCV}>
               <Download className="w-5 h-5" />
               Download CV
             </AnimatedBorderButton>
@@ -97,7 +115,7 @@ export const Hero = () => {
             <span className="text-sm text-muted-foreground">Follow Me: </span>
             {[
               { icon: Github, href: "https://github.com/nissrine-elmniai" },
-              { icon: Linkedin, href: "www.linkedin.com/in/nissrine-el-mniai-0b3a28296" },
+              { icon: Linkedin, href: "https://www.linkedin.com/in/nissrine-el-mniai-0b3a28296/?locale=en" },
 
             ].map((social, idx) => (
               <a

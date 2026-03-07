@@ -2,7 +2,7 @@ import { Github, Linkedin, Heart } from "lucide-react";
 
 const socialLinks = [
     { icon: Github, href: "https://github.com/nissrine-elmniai", label: "GitHub" },
-    { icon: Linkedin, href: "www.linkedin.com/in/nissrine-el-mniai-0b3a28296", label: "LinkedIn" },
+    { icon: Linkedin, href: "https://www.linkedin.com/in/nissrine-el-mniai-0b3a28296/?locale=en", label: "LinkedIn" },
 ];
 
 const footerLinks = [
@@ -10,6 +10,7 @@ const footerLinks = [
     { href: "#projects", label: "Projects" },
     { href: "#experience", label: "Experience" },
     { href: "#certifications", label: "Certifications" },
+    { href: "#activities", label: "Activities" },
     { href: "#contact", label: "Contact" },
 ];
 
