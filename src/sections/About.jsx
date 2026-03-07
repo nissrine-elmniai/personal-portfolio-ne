@@ -35,9 +35,9 @@ export const About = () => {
             <span className="font-serif italic font-normal text-white"> one component at a time.</span>
           </h2>
           <div className="space-y-4 text-muted-foreground animate-fade-in animation-delay-200">
-            <p>I am a second-year Computer Engineering student at the National School of Applied Sciences of Oujda with a strong interest in Full-Stack development, web technologies, and artificial intelligence. I enjoy building practical solutions and continuously improving my technical skills through hands-on projects.</p>
-            <p>Throughout my studies, I have worked with technologies such as Java, Python, React, Angular, Symfony, and Spring Boot. I have also developed several academic projects, including a mobile HR management application using Android Studio and Firebase, and a desktop medical management system built with JavaFX following the MVC architecture.</p>
-            <p>During my internship at Société Régionale Multiservices de l’Oriental, I contributed to the development of a fleet management desktop application using Microsoft Access and VBA. I am motivated, detail-oriented, and always eager to learn, with a strong interest in innovative technologies, system optimization, and AI-driven solutions.</p>
+            <p>I am a second-year Computer Engineering student at ENSA Oujda, passionate about Full-Stack development and artificial intelligence. I enjoy building practical solutions and continuously improving my technical skills through hands-on projects.</p>
+            <p>I have experience with Java, Python, React, Angular, Symfony, and Spring Boot. My academic projects include a mobile HR management app (Android Studio, Firebase) and a desktop medical system (JavaFX, MVC). During my internship at Société Régionale Multiservices de l'Oriental, I contributed to a fleet management application using Microsoft Access and VBA.</p>
+            <p>I am motivated, detail-oriented, and eager to learn, with a strong interest in innovative technologies, system optimization, and AI-driven solutions.</p>
           </div>
           <div className="glass rounded-2xl p-6 glow-border animate-fade-in animation-delay-300">
             <p className=" text-lg font-medium italic text-foreground">"My mission is to create digital experiences that are not just functional, but truly delightful - prodects that users love to use and developers love to maintain"</p>

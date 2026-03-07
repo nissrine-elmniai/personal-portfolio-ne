@@ -191,7 +191,7 @@
   }
 
   .animate-marquee {
-    animation: marquee 15sw linear infinite;
+    animation: marquee 15s linear infinite;
   }
 
   .timeline-glow {

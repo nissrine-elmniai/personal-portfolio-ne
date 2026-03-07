@@ -32,7 +32,6 @@ const skills = [
 
 export const Hero = () => {
   const scrollToContact = () => {
-    // Scroller vers la section contact
     const contactSection = document.getElementById('contact');
     if (contactSection) {
       contactSection.scrollIntoView({
@@ -42,12 +41,17 @@ export const Hero = () => {
     }
   };
   const downloadCV = () => {
-    const link = document.createElement('a');
-    link.href = '/cv.pdf';
-    link.download = 'Nissrine_EL_MNIAI_CV.pdf';
-    document.body.appendChild(link);
-    link.click();
-    document.body.removeChild(link);
+    try {
+      const link = document.createElement('a');
+      link.href = '/cv.pdf';
+      link.download = 'nissrine-elmniai-cv.pdf';
+      link.target = '_blank';
+      document.body.appendChild(link);
+      link.click();
+      document.body.removeChild(link);
+    } catch (error) {
+      window.open('/cv.pdf', '_blank');
+    }
   };
   return (<section className="relative min-h-screen flex items-center overflow-hidden">
     {/*Bg*/}
@@ -105,10 +109,13 @@ export const Hero = () => {
             <Button size="lg" onClick={scrollToContact}>
               Contact Me <ArrowRight className="w-5 h-5" />
             </Button>
-            <AnimatedBorderButton onClick={downloadCV}>
-              <Download className="w-5 h-5" />
-              Download CV
-            </AnimatedBorderButton>
+            <a href="/cv.pdf" download="Nissrine_EL_MNIAI_CV.pdf">
+              <AnimatedBorderButton onClick={downloadCV}>
+                <Download className="w-5 h-5" />
+                Download CV
+              </AnimatedBorderButton>
+            </a>
+
           </div>
           {/*Social Links */}
           <div className="flex items-center gap-4 animate-fade-in animation-delay-400">
