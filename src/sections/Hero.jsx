@@ -72,7 +72,7 @@ export const Hero = () => {
           <div className="flex justify-center animate-fade-in">
             <span className="inline-flex items-center gap-2 px-4 py-2 rounded-full glass text-sm text-primary">
               <span className="w-2 h-2 bg-primary rounded-full animate-pulse" />
-              Software Engineering Student | Full-Stack Developer
+              Seeking for an internship
             </span>
           </div>
           {/*Headline */}
