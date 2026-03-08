@@ -32,7 +32,7 @@ export const About = () => {
             <span className="text-secondary-foreground text-sm font-medium tracking-wider uppercase">About Me</span>
           </div>
           <h2 className="text-4xl md:text-5xl font-bold leading-tight animate-fade-in animation-delay-100 text-secondary-foreground">Building the future,
-            <span className="font-serif italic font-normal text-white"> one component at a time.</span>
+            <span className="font-serif italic font-normal text-white"> one component at a time</span>
           </h2>
           <div className="space-y-4 text-muted-foreground animate-fade-in animation-delay-200">
             <p>I am a second-year Computer Engineering student at ENSA Oujda, passionate about Full-Stack development and artificial intelligence. I enjoy building practical solutions and continuously improving my technical skills through hands-on projects.</p>

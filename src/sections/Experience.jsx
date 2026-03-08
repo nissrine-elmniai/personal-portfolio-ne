@@ -25,7 +25,7 @@ export const Experience = () => {
         mt-4 mb-6 animate-fade-in animation-delay-100
         text-secondary-foreground">
           Experience that <span className="font-serif italic font-normal text-white">
-            speaks volumes.</span>
+            speaks volumes</span>
         </h2>
         <p className="text-muted-foreground animate-fade-in
         animation-delay-200">

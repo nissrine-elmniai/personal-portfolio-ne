@@ -86,7 +86,7 @@ export const Contact = () => {
         text-secondary-foreground">
           Let's build {" "}
           <span className="font-serif italic font-normal text-white">
-            something great.
+            something great
           </span>
         </h2>
         <p className="text-muted-foreground animate-fade-in animation-delay-200">

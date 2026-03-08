@@ -66,10 +66,10 @@ export const Hero = () => {
     </div>
     { /*Content */}
     <div className="container mx-auto px-6 pt-32 pb-20 relative z-10">
-      <div className="grid lg:grid-cols-2 gap-12 items-center">
+      <div className="grid lg:grid-cols-1 gap-12 items-center">
         { /*Left Column - Text Content */}
-        <div className="space-y-8">
-          <div className="animate-fade-in">
+        <div className="space-y-8 text-center">
+          <div className="flex justify-center animate-fade-in">
             <span className="inline-flex items-center gap-2 px-4 py-2 rounded-full glass text-sm text-primary">
               <span className="w-2 h-2 bg-primary rounded-full animate-pulse" />
               Software Engineering Student | Full-Stack Developer
@@ -87,12 +87,12 @@ export const Hero = () => {
               <span className="font-serif italic font-normal text-white">
                 Interested to AI </span>
             </h1>
-            <p className="text-lg text-muted-foreground max-w-lg animate-fade-in animation-delay-200">
+            <p className="text-lg text-muted-foreground max-w-2xl mx-auto max-w-lg animate-fade-in animation-delay-200">
               I am currently looking for an application internship in Full-Stack development, with a particular interest in web development, mobile development, and artificial intelligence. I am available starting July 1, 2026, for a duration of 2 months.
             </p>
           </div>
           { /*CTAs  */}
-          <div className="flex flex-wrap gap-4 animate-fade-in animation-delay-300">
+          <div className="flex flex-wrap gap-4 justify-center animate-fade-in animation-delay-300">
             <Button size="lg" onClick={scrollToContact}>
               Contact Me <ArrowRight className="w-5 h-5" />
             </Button>
@@ -105,7 +105,7 @@ export const Hero = () => {
 
           </div>
           {/*Social Links */}
-          <div className="flex items-center gap-4 animate-fade-in animation-delay-400">
+          <div className="flex items-center justify-center gap-4 animate-fade-in animation-delay-400">
             <span className="text-sm text-muted-foreground">Follow Me: </span>
             {[
               { icon: Github, href: "https://github.com/nissrine-elmniai" },
@@ -123,8 +123,7 @@ export const Hero = () => {
 
         </div>
         { /*Right Column - Profile Image */}
-        <div className="relative animate-fade-in animation-delay-300">
-          { /*Profile Image */}
+        {/*<div className="relative animate-fade-in animation-delay-300">
           <div className="relative max-w-md mx-auto">
             <div className="absolute inset-0
             rounded-3xl bg-gradient-to-br
@@ -137,17 +136,15 @@ export const Hero = () => {
                 alt="Nissrine EL MNIAI"
                 className="object-cover rounded-2xl w-full aspect-[4/5]"
               />
-              { /* Floating Badge*/}
-              <div className="absolute -bottom-4 -right-4 glass rounded-xl px-4 py-3 animate-float">
+              <div div className="absolute -bottom-4 -right-4 glass rounded-xl px-4 py-3 animate-float">
                 <div className="flex items-center gap-3">
                   <div className="w-3 h-3 bg-green-500 rounded-full animate-pulse" />
                   <span className="text-sm font-medium">Seeking for an internship</span>
                 </div>
               </div>
-              { /* Stats Badge*/}
             </div>
           </div>
-        </div>
+        </div> */}
       </div>
       {/*Skills Section*/}
       <div className="mt-20 animate-fade-in animation-delay-600">
