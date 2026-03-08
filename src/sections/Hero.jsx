@@ -40,19 +40,6 @@ export const Hero = () => {
       });
     }
   };
-  const downloadCV = () => {
-    try {
-      const link = document.createElement('a');
-      link.href = '/cv.pdf';
-      link.download = 'nissrine-elmniai-cv.pdf';
-      link.target = '_blank';
-      document.body.appendChild(link);
-      link.click();
-      document.body.removeChild(link);
-    } catch (error) {
-      window.open('/cv.pdf', '_blank');
-    }
-  };
   return (<section className="relative min-h-screen flex items-center overflow-hidden">
     {/*Bg*/}
     <div className="absolute inset-0">
@@ -110,7 +97,7 @@ export const Hero = () => {
               Contact Me <ArrowRight className="w-5 h-5" />
             </Button>
             <a href="/cv.pdf" download="Nissrine_EL_MNIAI_CV.pdf">
-              <AnimatedBorderButton onClick={downloadCV}>
+              <AnimatedBorderButton >
                 <Download className="w-5 h-5" />
                 Download CV
               </AnimatedBorderButton>
