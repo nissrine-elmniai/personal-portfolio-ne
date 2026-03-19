@@ -13,18 +13,6 @@ const certifs = [
     tags: ["C#"],
     link: "https://www.freecodecamp.org/certification/nissrine_elmniai/foundational-c-sharp-with-microsoft",
   },
-  {
-    title: "Introduction to Java",
-    image: "/certifications/java-intro.jpg",
-    tags: ["Java"],
-    link: "https://www.sololearn.com/certificates/CC-65TSEG47",
-  },
-  {
-    title: "Java intermediate",
-    image: "/certifications/java-inter.jpg",
-    tags: ["Java"],
-    link: "https://www.sololearn.com/certificates/CC-IGQWAWUM",
-  },
 ];
 
 export const Certification = () => {
