@@ -21,19 +21,19 @@ const certifs = [
   },
   {
     title: "Introduction to JAVA",
-    image: "/certifications/java-intro.png",
+    image: "/certifications/java-intro.jpg",
     tags: ["Java"],
     link: "https://www.sololearn.com/certificates/CC-65TSEG47",
   },
   {
     title: "JAVA Intermediate",
-    image: "/certifications/java-inter.png",
+    image: "/certifications/java-inter.jpg",
     tags: ["Java"],
     link: "https://www.sololearn.com/certificates/CC-IGQWAWUM",
   },
   {
     title: "Introduction to JavaScript",
-    image: "/certifications/certif-js.png",
+    image: "/certifications/certif-js.jpg",
     tags: ["JavaScript"],
     link: "https://www.sololearn.com/certificates/CC-NHXKQL4Q",
   },
