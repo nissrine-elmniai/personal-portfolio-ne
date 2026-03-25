@@ -2,6 +2,12 @@ import { ArrowUpRight, Github } from "lucide-react";
 import { AnimatedBorderButton } from "@/components/AnimatedBorderButton";
 const certifs = [
   {
+    title: "Java (Basic)",
+    image: "/certifications/java-basic.png",
+    tags: ["Java", "Problem Solving"],
+    link: "https://www.hackerrank.com/certificates/f7af1017fdb7",
+  },
+  {
     title: "Legacy JavaScript Algorithms and Data Structures",
     image: "/certifications/js.png",
     tags: ["HTML", "CSS", "JavaScript", "Data Structures", "Algorithms"],
