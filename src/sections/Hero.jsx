@@ -32,6 +32,9 @@ const skills = [
   "JUnit",
   "Jenkins",
   "Maven",
+  "TKinter",
+  "Matplotlib",
+  "Pandas",
 ];
 
 export const Hero = () => {
