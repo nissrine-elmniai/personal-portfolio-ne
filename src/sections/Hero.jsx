@@ -27,7 +27,11 @@ const skills = [
   "Deep Learning",
   "Scrum",
   "Git",
+  "GitHub",
   "Figma",
+  "JUnit",
+  "Jenkins",
+  "Maven",
 ];
 
 export const Hero = () => {
@@ -72,7 +76,7 @@ export const Hero = () => {
           <div className="flex justify-center animate-fade-in">
             <span className="inline-flex items-center gap-2 px-4 py-2 rounded-full glass text-sm text-primary">
               <span className="w-2 h-2 bg-primary rounded-full animate-pulse" />
-              Seeking for an internship
+              Seeking for an internship opportunity!
             </span>
           </div>
           {/*Headline */}
@@ -85,10 +89,10 @@ export const Hero = () => {
               <span> Developer</span>
               <br />
               <span className="font-serif italic font-normal text-white">
-                Interested to AI </span>
+                Passionate about AI </span>
             </h1>
             <p className="text-lg text-muted-foreground max-w-2xl mx-auto max-w-lg animate-fade-in animation-delay-200">
-              I am currently looking for an application internship in Full-Stack development, with a particular interest in web development, mobile development, and artificial intelligence. I am available starting July 1, 2026, for a duration of 2 months.
+              I am currently looking for a PFA internship in Full-Stack development, with a particular interest in web development, mobile development, DevOps and artificial intelligence. I am available starting July 1, 2026, for a duration of 2 months.
             </p>
           </div>
           { /*CTAs  */}
