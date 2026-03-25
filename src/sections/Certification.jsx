@@ -19,6 +19,24 @@ const certifs = [
     tags: ["C#"],
     link: "https://www.freecodecamp.org/certification/nissrine_elmniai/foundational-c-sharp-with-microsoft",
   },
+  {
+    title: "Introduction to JAVA",
+    image: "/certifications/java-intro.png",
+    tags: ["Java"],
+    link: "https://www.sololearn.com/certificates/CC-65TSEG47",
+  },
+  {
+    title: "JAVA Intermediate",
+    image: "/certifications/java-inter.png",
+    tags: ["Java"],
+    link: "https://www.sololearn.com/certificates/CC-IGQWAWUM",
+  },
+  {
+    title: "Introduction to JavaScript",
+    image: "/certifications/certif-js.png",
+    tags: ["Java"],
+    link: "https://www.sololearn.com/certificates/CC-NHXKQL4Q",
+  },
 ];
 
 export const Certification = () => {
