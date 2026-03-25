@@ -34,7 +34,7 @@ const certifs = [
   {
     title: "Introduction to JavaScript",
     image: "/certifications/certif-js.png",
-    tags: ["Java"],
+    tags: ["JavaScript"],
     link: "https://www.sololearn.com/certificates/CC-NHXKQL4Q",
   },
 ];
