@@ -1,43 +1,45 @@
 import { Button } from '@/components/Button'
 import { AnimatedBorderButton } from '../components/AnimatedBorderButton'
-import { ArrowRight, ChevronDown, Github, Linkedin, Download } from 'lucide-react'
-const skills = [
-  "Java",
-  "Python",
-  "JavaScript",
-  "PHP",
-  "C#",
-  "SQL/PLSQL",
-  "HTML",
-  "CSS",
-  "JEE",
-  "Spring Boot",
-  "React",
-  "Angular",
-  "Symfony",
-  ".NET",
-  "MySQL",
-  "SQLite",
-  "Firebase",
-  "Android Studio",
-  "XML",
-  "UML",
-  "Merise",
-  "Machine Learning",
-  "Deep Learning",
-  "Scrum",
-  "Git",
-  "GitHub",
-  "Figma",
-  "JUnit",
-  "Jenkins",
-  "Maven",
-  "TKinter",
-  "Matplotlib",
-  "Pandas",
-];
+import { ArrowRight, ChevronDown, Github, Linkedin, Download, Briefcase, Award, Code2, Layers } from 'lucide-react'
+import { skills } from '@/data/skills'
+import { useCountUp } from '@/hooks/useCountUp'
+import { useReducedMotion } from '@/hooks/useReducedMotion'
+
+function StatItem({ icon: Icon, label, end, suffix }) {
+  const [count, ref] = useCountUp(end, 2000)
+  return (
+    <div ref={ref} className="glass rounded-2xl px-6 py-4 flex items-center gap-4 min-w-[155px] sm:min-w-[180px]">
+      <div className="w-10 h-10 rounded-xl bg-primary/10 flex items-center justify-center flex-shrink-0">
+        <Icon className="w-5 h-5 text-primary" />
+      </div>
+      <div>
+        <div className="text-2xl font-bold text-primary glow-text">{count}{suffix || ''}</div>
+        <div className="text-xs text-muted-foreground whitespace-nowrap">{label}</div>
+      </div>
+    </div>
+  )
+}
+
+function StatsRow() {
+  const stats = [
+    { icon: Briefcase, label: 'Projects Completed', end: 9, suffix: '+' },
+    { icon: Award, label: 'Certifications', end: 6 },
+    { icon: Code2, label: "Technologies", end: skills.length, suffix: '+' },
+    { icon: Layers, label: "Years of Experience", end: 2 },
+  ]
+  return (
+    <div className="mt-16 animate-fade-in animation-delay-800">
+      <div className="flex flex-wrap justify-center gap-6 md:gap-10">
+        {stats.map((s, i) => (
+          <StatItem key={i} icon={s.icon} label={s.label} end={s.end} suffix={s.suffix} />
+        ))}
+      </div>
+    </div>
+  )
+}
 
 export const Hero = () => {
+  const reduced = useReducedMotion()
   const scrollToContact = () => {
     const contactSection = document.getElementById('contact');
     if (contactSection) {
@@ -72,34 +74,53 @@ export const Hero = () => {
       ))}
     </div>
     { /*Content */}
-    <div className="container mx-auto px-6 pt-32 pb-20 relative z-10">
+    <div className="container mx-auto px-6 pt-32 pb-16 md:pb-24 relative z-10">
       <div className="grid lg:grid-cols-1 gap-12 items-center">
         { /*Left Column - Text Content */}
-        <div className="space-y-8 text-center">
+        <div className="space-y-10 md:space-y-12 text-center">
           <div className="flex justify-center animate-fade-in">
             <span className="inline-flex items-center gap-2 px-4 py-2 rounded-full glass text-sm text-primary">
               <span className="w-2 h-2 bg-primary rounded-full animate-pulse" />
-              Seeking for an internship opportunity!
+              Welcome to my<span className="font-semibold text-primary">Portfolio !</span>
             </span>
+
+
           </div>
+
           {/*Headline */}
           <div className="space-y-4">
-            <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold leading-tight animate-fade-in animation-delay-100">
-              Software Engineering Student
+            <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold leading-tight animate-fade-in animation-delay-200">
+              <span className="relative inline-block">
+                Computer Engineering Student
+                {/* Desktop floating badge — anchored under "Student" */}
+                <span className={`hidden md:inline-flex absolute top-full right-0 mt-1.5 items-center gap-1 px-2 py-1 rounded-full glass border border-primary/30 shadow-glow-sm text-[10px] md:text-xs text-primary font-medium whitespace-nowrap ${reduced ? '' : 'animate-float'}`}>
+                  <span className="w-1 h-1 bg-primary rounded-full animate-pulse shrink-0" />
+                  Specializing in
+                </span>
+              </span>
               <br />
               <span className="text-primary glow-text">
-                Full-Stack</span>
-              <span> Developer</span>
+                Software</span>
+              <span> Engineering <span className="font-serif italic font-normal text-white">
+                & </span></span>
+
               <br />
               <span className="font-serif italic font-normal text-white">
-                Passionate about AI </span>
+                Artificial Intelligence </span>
             </h1>
-            <p className="text-lg text-muted-foreground max-w-2xl mx-auto max-w-lg animate-fade-in animation-delay-200">
-              I am currently looking for a PFA internship in Full-Stack development, with a particular interest in web development, mobile development, DevOps and artificial intelligence. I am available starting July 1, 2026, for a duration of 2 months.
-            </p>
+
+            {/* Mobile badge — in flow, centered below title */}
+            <div className="flex justify-center md:hidden animate-fade-in animation-delay-100">
+              <span className="inline-flex items-center gap-2 px-3 py-1 rounded-full glass border border-primary/30 text-[10px] text-primary font-medium">
+                <span className="w-1 h-1 bg-primary rounded-full animate-pulse shrink-0" />
+                Specializing in
+              </span>
+            </div>
+
+
           </div>
           { /*CTAs  */}
-          <div className="flex flex-wrap gap-4 justify-center animate-fade-in animation-delay-300">
+          <div className="flex flex-wrap gap-4 justify-center animate-fade-in animation-delay-400">
             <Button size="lg" onClick={scrollToContact}>
               Contact Me <ArrowRight className="w-5 h-5" />
             </Button>
@@ -112,7 +133,7 @@ export const Hero = () => {
 
           </div>
           {/*Social Links */}
-          <div className="flex items-center justify-center gap-4 animate-fade-in animation-delay-400">
+          <div className="flex items-center justify-center gap-4 animate-fade-in animation-delay-500">
             <span className="text-sm text-muted-foreground">Follow Me: </span>
             {[
               { icon: Github, href: "https://github.com/nissrine-elmniai" },
@@ -154,7 +175,7 @@ export const Hero = () => {
         </div> */}
       </div>
       {/*Skills Section*/}
-      <div className="mt-20 animate-fade-in animation-delay-600">
+      <div className="mt-20 animate-fade-in animation-delay-700">
         <p className="text-sm text-muted-foreground mb-6 text-center">Technologies I work with</p>
         <div className="relative overflow-hidden">
           <div className="flex animate-marquee">
@@ -168,14 +189,18 @@ export const Hero = () => {
           </div>
         </div>
       </div>
+      {/* Stats */}
+      <StatsRow />
+      {/* Scroll indicator — normal flow, plus d'absolute pour éviter le chevauchement */}
+      <div className="mt-16 animate-fade-in animation-delay-900 flex justify-center">
+        <a
+          href="#about"
+          className="flex flex-col items-center gap-2 text-muted-foreground hover:text-primary-foreground">
+          <span className="text-xs uppercase tracking-wider">Scroll</span>
+          <ChevronDown className="w-6 h-6 animate-bounce" />
+        </a>
+      </div>
     </div >
-    <div className="absolute bottom-8 left-1/2 -translate-x-1/2 animate-fade-in animation-delay-800">
-      <a
-        href="#about"
-        className="flex flex-col items-center gap-2 text-muted-foreground hover:text-primary-foreground">
-        <span className="text-xxs uppercase tracking-wider">Scroll</span>
-        <ChevronDown className="w-6 h-6 animate-bounce" />
-      </a></div>
   </section >
   );
 };

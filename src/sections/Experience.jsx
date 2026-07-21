@@ -1,14 +1,4 @@
-
-const experiences = [
-  {
-    period: "July 2025 - 1 Month",
-    role: "Intern",
-    company: "Société Régionale Multiservices l'Oriental SA",
-    description: "Design and development of a desktop fleet management application, developed as a team project of two members.",
-    technologies: ["Microsoft Access", "VBA"],
-    current: false,
-  },
-];
+import { experiences } from '@/data/experiences';
 export const Experience = () => {
   return <section id="experience"
     className="py-32 relative overflow-hidden">

@@ -1,43 +1,5 @@
-import { ArrowUpRight, Github } from "lucide-react";
-import { AnimatedBorderButton } from "@/components/AnimatedBorderButton";
-const certifs = [
-  {
-    title: "Java (Basic)",
-    image: "/certifications/java-basic.png",
-    tags: ["Java", "Problem Solving"],
-    link: "https://www.hackerrank.com/certificates/f7af1017fdb7",
-  },
-  {
-    title: "Legacy JavaScript Algorithms and Data Structures",
-    image: "/certifications/js.png",
-    tags: ["HTML", "CSS", "JavaScript", "Data Structures", "Algorithms"],
-    link: "https://www.freecodecamp.org/certification/nissrine_elmniai/javascript-algorithms-and-data-structures-v8",
-  },
-  {
-    title: "Foundational C# with Microsoft",
-    image: "/certifications/csharp.png",
-    tags: ["C#"],
-    link: "https://www.freecodecamp.org/certification/nissrine_elmniai/foundational-c-sharp-with-microsoft",
-  },
-  {
-    title: "Introduction to JAVA",
-    image: "/certifications/java-intro.jpg",
-    tags: ["Java"],
-    link: "https://www.sololearn.com/certificates/CC-65TSEG47",
-  },
-  {
-    title: "JAVA Intermediate",
-    image: "/certifications/java-inter.jpg",
-    tags: ["Java"],
-    link: "https://www.sololearn.com/certificates/CC-IGQWAWUM",
-  },
-  {
-    title: "Introduction to JavaScript",
-    image: "/certifications/certif-js.jpg",
-    tags: ["JavaScript"],
-    link: "https://www.sololearn.com/certificates/CC-NHXKQL4Q",
-  },
-];
+import { ArrowUpRight } from "lucide-react";
+import { certifications } from '@/data/certifications';
 
 export const Certification = () => {
   return <section id="certifications" className="py-32 relative overflow-hidden">
@@ -57,8 +19,8 @@ export const Certification = () => {
         </p>
       </div>
       {/*Projects Grid */}
-      <div className="grid md:grid-cols-2 gap-8">
-        {certifs.map((certif, idx) => (
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        {certifications.map((certif, idx) => (
           <div
             key={idx}
             className="group glass rounded-2xl overflow-hidden animate-fade-in md:row-span-1"

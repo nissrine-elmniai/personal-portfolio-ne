@@ -146,9 +146,9 @@ export const Contact = () => {
             {submitStatus.type && (
               <div
                 className={`flex items-center gap-3
-                     p-4 rounded-xl ${submitStatus.type === "success"
-                    ? "bg-green-500/10 border border-green-500/20 text-green-400"
-                    : "bg-red-500/10 border border-red-500/20 text-red-400"
+                      p-4 rounded-xl ${submitStatus.type === "success"
+                    ? "bg-success/10 border border-success/20 text-success"
+                    : "bg-error/10 border border-error/20 text-error"
                   }`}
               >
                 {submitStatus.type === "success" ? (
