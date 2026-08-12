@@ -25,17 +25,17 @@ export const Footer = ({ onOpenDS }) => {
             <KonamiEasterEgg />
             <footer className="py-12 relative">
                 <div className="container mx-auto px-6 space-y-10">
-                    <div className="max-w-lg mx-auto">
+                    <div className="max-w-lg mx-auto animate-fade-in">
                         <TerminalSignature />
                     </div>
 
                     {/* Bottom line : centre + socials */}
                     <div className="flex flex-col md:flex-row items-center justify-between gap-4 pt-6 border-t border-border">
-                        <div className="flex flex-wrap items-center justify-center md:justify-start gap-x-3 gap-y-1 text-sm text-muted-foreground">
+                        <div className="flex flex-wrap items-center justify-center md:justify-start gap-x-3 gap-y-1 text-sm text-muted-foreground animate-fade-in animation-delay-200">
                             <LiveClock />
                         </div>
 
-                        <div className="flex items-center gap-4">
+                        <div className="flex items-center gap-4 animate-fade-in animation-delay-300">
                             {socialLinks.map((social) => (
                                 <a
                                     key={social.label}
@@ -47,7 +47,7 @@ export const Footer = ({ onOpenDS }) => {
                                 </a>
                             ))}
                         </div>
-                        <div className="text-center md:text-right">
+                        <div className="text-center md:text-right animate-fade-in animation-delay-400">
                             <a href="#" className="text-xl font-bold tracking-tight">
                                 NM<span className="text-primary">.</span>
                             </a>
@@ -57,7 +57,9 @@ export const Footer = ({ onOpenDS }) => {
                         </div>
                     </div>
 
-                    <MadeWithLove />
+                    <div className="animate-fade-in animation-delay-500">
+                        <MadeWithLove />
+                    </div>
 
                 </div>
                 <button

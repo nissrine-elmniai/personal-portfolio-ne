@@ -1,4 +1,5 @@
 import { experiences } from '@/data/experiences';
+import { Building2 } from 'lucide-react';
 export const Experience = () => {
   return <section id="experience"
     className="py-32 relative overflow-hidden">
@@ -43,9 +44,23 @@ export const Experience = () => {
                 "md:pr-16 md:text-right"
                 : "md:col-start-2 md:pl-16"}`}>
                 <div className={`glass p-6 rounded-2xl border border-primary/30 hover:border-primary/50 transition-all duration-500`}>
-                  <span className="text-sm text-primary font-medium">{exp.period}</span>
-                  <h3 className="text-xl font-semibold mt-2">{exp.role}</h3>
-                  <p className="text-muted-foreground">{exp.company}</p>
+                  <div className={`flex items-start gap-4 ${idx % 2 === 0 ? "md:flex-row-reverse" : ""}`}>
+                    <div className="relative w-10 h-10 sm:w-12 sm:h-12 shrink-0 rounded-lg bg-white/90 border border-primary/10 shadow-sm overflow-hidden">
+                      {exp.logo ? (
+                        <img src={exp.logo}
+                          alt={`Logo ${exp.company}`}
+                          loading="lazy"
+                          className="absolute inset-0 w-full h-full object-contain p-1" />
+                      ) : (
+                        <Building2 className="absolute inset-0 m-auto w-5 h-5 sm:w-6 sm:h-6 text-muted-foreground" />
+                      )}
+                    </div>
+                    <div className="min-w-0">
+                      <span className="text-sm text-primary font-medium break-words">{exp.period}</span>
+                      <h3 className="text-xl font-semibold mt-2">{exp.role}</h3>
+                      <p className="text-muted-foreground">{exp.company}</p>
+                    </div>
+                  </div>
                   <p className="text-sm text-muted-foreground mt-4">{exp.description}</p>
                   <div className={`flex flex-wrap gap-2 mt-4 ${idx % 2 === 0 ? "md:justify-end" : ""
                     }`}>

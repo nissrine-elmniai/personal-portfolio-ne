@@ -62,7 +62,7 @@ export const About = () => {
               <div className="glass rounded-2xl p-6 border border-border animate-fade-in animation-delay-[500ms]">
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                   {quickFacts.map((fact, idx) => (
-                    <div key={idx} className="flex items-start gap-2">
+                    <div key={idx} className="flex items-start gap-2 animate-fade-in" style={{ animationDelay: `${(idx + 2) * 100}ms` }}>
                       <ChevronRight className="w-4 h-4 text-primary mt-0.5 shrink-0" />
                       <p className="text-sm text-muted-foreground">
                         <span className="font-semibold text-foreground">{fact.label}:</span>{" "}

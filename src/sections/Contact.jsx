@@ -99,7 +99,7 @@ export const Contact = () => {
       <div className="grid lg:grid-cols-2 gap-12 max-w-5xl mx-auto">
         <div className="glass p-8 rounded-3xl border border-primary/30 animate-fade-in animation-delay-300">
           <form className="space-y-6" onSubmit={handleSubmit}>
-            <div>
+            <div className="animate-fade-in animation-delay-400">
               <label htmlFor="name"
                 className="block text-sm font-medium mb-2">Name</label>
               <input id="name"
@@ -110,7 +110,7 @@ export const Contact = () => {
                 onChange={(e) => setFormData({ ...formData, name: e.target.value })}
                 className="w-full px-4 py-3 bg-surface rounded-xl border border-border focus:border-primary focus:ring-1 focus:ring-primary outline-none transition-all" />
             </div>
-            <div>
+            <div className="animate-fade-in animation-delay-500">
               <label htmlFor="email"
                 className="block text-sm font-medium mb-2">Email</label>
               <input id="email"
@@ -121,7 +121,7 @@ export const Contact = () => {
                 onChange={(e) => setFormData({ ...formData, email: e.target.value })}
                 className="w-full px-4 py-3 bg-surface rounded-xl border border-border focus:border-primary focus:ring-1 focus:ring-primary outline-none transition-all" />
             </div>
-            <div>
+            <div className="animate-fade-in animation-delay-600">
               <label htmlFor="message"
                 className="block text-sm font-medium mb-2">Message</label>
               <textarea id="message"
@@ -133,7 +133,8 @@ export const Contact = () => {
                 className="w-full px-4 py-3 bg-surface rounded-xl border border-border focus:border-primary focus:ring-1 focus:ring-primary outline-none transition-all resize-none" />
             </div>
 
-            <Button className="w-full" type="submit" size="lg" disabled={isLoading}>
+            <div className="animate-fade-in animation-delay-700">
+              <Button className="w-full" type="submit" size="lg" disabled={isLoading}>
               {isLoading ? (
                 <>Sending...</>
               ) : (
@@ -143,9 +144,10 @@ export const Contact = () => {
                 </>
               )}
             </Button>
+            </div>
             {submitStatus.type && (
               <div
-                className={`flex items-center gap-3
+                className={`flex items-center gap-3 animate-fade-in animation-delay-200
                       p-4 rounded-xl ${submitStatus.type === "success"
                     ? "bg-success/10 border border-success/20 text-success"
                     : "bg-error/10 border border-error/20 text-error"
@@ -172,7 +174,8 @@ export const Contact = () => {
                 <a
                   key={i}
                   href={item.href}
-                  className="flex items-center gap-4 p-4 rounded-xl hover:bg-surface transition-colors group"
+                  style={{ animationDelay: `${(i + 2) * 100}ms` }}
+                  className="flex items-center gap-4 p-4 rounded-xl hover:bg-surface transition-colors group animate-fade-in"
                 >
                   <div className="w-12 h-12 rounded-xl bg-primary/10 flex items-center justify-center group-hover:bg-primary/20 transition-colors">
                     <item.icon className="w-5 h-5 text-primary" />
@@ -190,7 +193,7 @@ export const Contact = () => {
 
 
           {/* Availability Card */}
-          <div className="glass rounded-3xl p-8 border border-primary/30">
+          <div className="glass rounded-3xl p-8 border border-primary/30 animate-fade-in animation-delay-700">
             <div className="flex items-center gap-3 mb-4">
               <span className="w-3 h-3 bg-green-500 rounded-full animate-pulse" />
               <span className="font-medium">Currently Available</span>

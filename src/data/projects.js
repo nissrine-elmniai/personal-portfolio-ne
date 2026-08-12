@@ -1,5 +1,14 @@
 export const projects = [
   {
+    title: "Site Officiel du Club Altruisme",
+    description: "Conception et développement du site officiel du Club Altruisme de l'ENSAO. Déploiement via Vercel, avec base de données hébergée sur Cloudflare",
+    image: "/projects/club_altruisme.png",
+    categories: ["web"],
+    tags: ["React 19", "Vite 8", "Tailwind CSS v4", "EmailJS"],
+    link: "https://club-altruisme-ensao.vercel.app/",
+    github: "https://github.com/nissrine-elmniai/club-altruisme-ensao",
+  },
+  {
     title: "SmarTest",
     description: "Conception and development of a secure hybrid platform for the generation, real-time monitoring, and AI-assisted grading of quizzesand exams, as a team project of four members.",
     image: "/projects/SmarTest-AppIcon.png",

@@ -4,6 +4,7 @@ import './index.css'
 import App from './App.jsx'
 import { ErrorBoundary } from '@/components/ErrorBoundary'
 import { consoleEgg } from '@/utils/consoleEgg'
+import { initRevealObserver } from '@/utils/revealObserver'
 
 consoleEgg()
 
@@ -14,3 +15,4 @@ createRoot(document.getElementById('root')).render(
     </ErrorBoundary>
   </StrictMode>,
 )
+initRevealObserver()

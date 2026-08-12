@@ -1,8 +1,24 @@
 import { activities } from '@/data/activities';
+import { useReducedMotion } from '@/hooks/useReducedMotion';
+
+const gitBranchIcon = (
+    <svg
+        viewBox="0 0 16 16"
+        fill="currentColor"
+        aria-hidden="true"
+        className="w-3.5 h-3.5"
+    >
+        <path d="M9.5 3.25a2.25 2.25 0 1 1 3 2.122V5.25a2.5 2.5 0 0 1-2.5 2.5h-.333a1.5 1.5 0 0 0-1.5 1.5v.378a2.25 2.25 0 1 1-1.5 0V9.25a1.5 1.5 0 0 0-1.5-1.5H4.5a2.5 2.5 0 0 1-2.5-2.5v-.122A2.25 2.25 0 1 1 3.5 3.25v.5a1 1 0 0 0 1 1h1a1 1 0 0 1 1 1V9.25a2.5 2.5 0 0 1 .5.072V9.25a3 3 0 0 1 3-3h.334a1 1 0 0 0 1-1v-.122A2.25 2.25 0 0 1 9.5 3.25Zm-6 2a1 1 0 1 0 0-2 1 1 0 0 0 0 2Zm4.947 8.5a1 1 0 1 0 0-2 1 1 0 0 0 0 2Zm2.776-16a1 1 0 1 0 .1 2 1 1 0 0 0-.1-2Z"
+        />
+    </svg>
+);
+
 export const Activities = () => {
+    const reducedMotion = useReducedMotion();
+
     return <section id="activities"
         className="py-32 relative overflow-hidden">
-        <div className="absolute top-1/2 left-1/4 w-96 h-96 
+        <div className="absolute top-1/2 left-1/4 w-96 h-96
     bg-primary/5 rounded-full blur-3xl -translate-y-1/2"
         />
         <div className="container mx-auto px-6 relative z-10">
@@ -23,41 +39,63 @@ export const Activities = () => {
                 </p>
             </div>
 
-            {/* Timeline*/}
-            <div className="relative">
-                <div className="timeline-glow absolute left-0 md:left-1/2 top-0 bottom-0 w-[2px] bg-gradient-to-b from-primary/70 via-primary/30 to-transparent md:-translate-x-1/2 shadow-[0_0_25px_rgba(32, 178, 166, 0.8)]" />
-                {/*Experience Items */}
-                <div className="space-y-12">
-                    {activities.map((act, idx) => (
-                        <div key={idx}
-                            className="relative grid md:grid-cols-2 gap-8 animate-fade-in"
-                            style={{ animationDelay: `${(idx + 1) * 150}ms` }}
+            {/*Commit log */}
+            <div className="relative max-w-3xl mx-auto">
+                {/*HEAD indicator */}
+                <div className="relative left-5 md:left-6 mb-1">
+                    <span className="inline-flex items-center gap-2
+                        text-muted-foreground font-mono text-xs
+                        border border-border px-2 py-0.5 rounded-md bg-surface/60">
+                        <span className="text-primary" aria-hidden="true">{gitBranchIcon}</span>
+                        <span className="uppercase tracking-wider">HEAD</span>
+                    </span>
+                </div>
 
-                        >
-                            {/*Timeline Dot */}
-                            <div className="absolute left-0 md:left-1/2 top-0 w-3 h-3 bg-primary rounded-full -translate-x-1/2 ring-4 ring-background z-10">
-                                {act.current && <span className="absolute inset-0 rounded-full bg-primary animate-ping opacity-75" />}
-                            </div>
-                            { /*Content */}
-                            <div className={`pl-8 md:pl-0 ${idx % 2 === 0 ?
-                                "md:pr-16 md:text-right"
-                                : "md:col-start-2 md:pl-16"}`}>
-                                <div className={`glass p-6 rounded-2xl border border-primary/30 hover:border-primary/50 transition-all duration-500`}>
-                                    <span className="text-sm text-primary font-medium">{act.period}</span>
-                                    <h3 className="text-xl font-semibold mt-2">{act.role}</h3>
-                                    <p className="text-muted-foreground">{act.company}</p>
-                                    <div className={`flex flex-wrap gap-2 mt-4 ${idx % 2 === 0 ? "md:justify-end" : ""
-                                        }`}>
+                {/*Vertical line + nodes */}
+                <div className="relative">
+                    <div className="absolute left-5 md:left-6 top-0 bottom-0 w-px
+                        bg-gradient-to-b from-primary/50 via-primary/25 to-transparent"
+                    />
+                    <ol className="relative">
+                        {activities.map((act, idx) => (
+                            <li key={idx}
+                                className={`group relative pl-12 md:pl-14 animate-fade-in
+                                    ${idx % 2 === 1 ? "bg-white/[0.02]" : ""}
+                                    ${idx === 0 ? "rounded-t-md" : ""}
+                                    ${idx === activities.length - 1 ? "rounded-b-md" : ""}`}
+                                style={{ animationDelay: `${(idx + 1) * 150}ms` }}
+                            >
+                                {/*Commit dot on the line */}
+                                <span className={`absolute left-5 md:left-6 top-6 -translate-x-1/2
+                                    w-2.5 h-2.5 rounded-full bg-primary
+                                    ring-4 ring-background z-10
+                                    ${reducedMotion ? "" : "transition-transform duration-300"}
+                                    group-hover:bg-primary-hover
+                                    ${reducedMotion ? "" : "group-hover:scale-150"}`}
+                                />
+                                {/*Item content */}
+                                <div className={`py-5 pl-4 pr-4 border-b border-border/60
+                                    group-hover:bg-white/[0.03]
+                                    ${reducedMotion ? "" : "transition-colors duration-300"}
+                                    ${idx === activities.length - 1 ? "border-b-0" : ""}`}
+                                >
+                                    <span className="font-mono text-xs text-primary">{act.period}</span>
+                                    <h3 className="font-semibold mt-1 leading-snug">{act.role}</h3>
+                                    <p className="text-sm text-muted-foreground mt-0.5">{act.company}</p>
+                                    <div className="flex flex-wrap gap-1.5 mt-3">
                                         {act.skills.map((skill, skillIdx) => (
                                             <span key={skillIdx}
-                                                className="px-3 py-1 bg-surface text-xs rounded-full text-muted-foreground">
-                                                {skill}</span>
+                                                className="px-2 py-0.5 bg-primary-muted border border-primary/25
+                                                    rounded-md font-mono text-[11px] text-secondary-foreground"
+                                            >
+                                                {skill.trim()}
+                                            </span>
                                         ))}
                                     </div>
                                 </div>
-                            </div>
-                        </div>
-                    ))}
+                            </li>
+                        ))}
+                    </ol>
                 </div>
             </div>
         </div>
