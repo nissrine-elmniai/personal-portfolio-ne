@@ -57,7 +57,7 @@ export const Footer = ({ onOpenDS }) => {
                         </div>
                     </div>
 
-                    <div className="animate-fade-in animation-delay-500">
+                    <div>
                         <MadeWithLove />
                     </div>
 

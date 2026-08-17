@@ -5,7 +5,7 @@ import { useReducedMotion } from '@/hooks/useReducedMotion';
 import { useDragScroll } from '@/hooks/useDragScroll';
 
 const filters = [
-  { value: "all", label: "Tous" },
+  { value: "all", label: "All" },
   { value: "web", label: "Web" },
   { value: "desktop", label: "Desktop" },
   { value: "mobile", label: "Mobile" },
@@ -83,11 +83,10 @@ export const Projects = () => {
             key={filter.value}
             onClick={() => setActiveFilter(filter.value)}
             style={{ animationDelay: reduced ? '0ms' : `${(idx + 1) * 100}ms` }}
-            className={`px-4 py-1.5 rounded-full text-sm font-medium transition-all duration-300 animate-fade-in ${
-              activeFilter === filter.value
-                ? "bg-primary text-background"
-                : "bg-surface text-muted-foreground hover:text-foreground"
-            }`}
+            className={`px-4 py-1.5 rounded-full text-sm font-medium transition-all duration-300 animate-fade-in ${activeFilter === filter.value
+              ? "bg-primary text-background"
+              : "bg-surface text-muted-foreground hover:text-foreground"
+              }`}
           >
             {filter.label}
           </button>

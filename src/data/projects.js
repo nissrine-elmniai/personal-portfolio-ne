@@ -1,7 +1,7 @@
 export const projects = [
   {
-    title: "Site Officiel du Club Altruisme",
-    description: "Conception et développement du site officiel du Club Altruisme de l'ENSAO. Déploiement via Vercel, avec base de données hébergée sur Cloudflare",
+    title: "Altruisme Club Official Website – ENSAO",
+    description: "Designed and developed the official club website. Built with a modern JS framework, deployed via Vercel (CI/CD), with database hosted on Cloudflare",
     image: "/projects/club_altruisme.png",
     categories: ["web"],
     tags: ["React 19", "Vite 8", "Tailwind CSS v4", "EmailJS"],
@@ -10,7 +10,7 @@ export const projects = [
   },
   {
     title: "SmarTest",
-    description: "Conception and development of a secure hybrid platform for the generation, real-time monitoring, and AI-assisted grading of quizzesand exams, as a team project of four members.",
+    description: "Conception and development of a secure hybrid platform for the generation, real-time monitoring, and AI-assisted grading of quizzes and exams, as a team project of four members.",
     image: "/projects/SmarTest-AppIcon.png",
     categories: ["web", "desktop"],
     tags: ["Spring Boot", ".NET", "React", "MySQL", "SQLite", "API Groq", "API REST", "WebSocket", "JUnit"],
